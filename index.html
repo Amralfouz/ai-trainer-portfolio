@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Amr Al Fouz — AI Trainer Portfolio</title>
+<meta name="description" content="Portfolio of Amr Al Fouz — AI Trainer, Software Engineering & Digital Content Specialist." />
+<style>
+:root{
+  --bg:#0b1020;
+  --panel:#11182d;
+  --panel2:#0f1527;
+  --text:#eef2ff;
+  --muted:#a8b0c7;
+  --line:#26304f;
+  --accent:#7c6cff;
+  --accent2:#47c7ff;
+  --shadow:0 18px 60px rgba(0,0,0,.28);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color:var(--text);
+  background:
+    radial-gradient(circle at 15% 10%, rgba(124,108,255,.17), transparent 28%),
+    radial-gradient(circle at 85% 20%, rgba(71,199,255,.10), transparent 26%),
+    var(--bg);
+  line-height:1.6;
+}
+a{color:inherit;text-decoration:none}
+.container{width:min(1120px,92%);margin:auto}
+nav{
+  position:sticky;top:0;z-index:20;
+  backdrop-filter:blur(14px);
+  background:rgba(11,16,32,.72);
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;padding:16px 0}
+.brand{font-weight:800;letter-spacing:.3px}
+.nav-links{display:flex;gap:18px;flex-wrap:wrap}
+.nav-links a{color:var(--muted);font-size:14px}
+.nav-links a:hover{color:var(--text)}
+.hero{padding:92px 0 62px}
+.badge{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:8px 12px;border:1px solid var(--line);
+  border-radius:999px;color:#c9d1ff;background:rgba(255,255,255,.03);
+  font-size:13px;font-weight:700;
+}
+.hero h1{
+  font-size:clamp(42px,8vw,84px);line-height:1.02;
+  margin:22px 0 18px;letter-spacing:-2px;
+}
+.gradient{
+  background:linear-gradient(90deg,var(--text),#b6bfff 40%,#78dcff);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.hero p{font-size:clamp(18px,2vw,22px);max-width:820px;color:var(--muted)}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  padding:12px 18px;border-radius:12px;border:1px solid var(--line);
+  font-weight:800;font-size:14px;
+}
+.btn.primary{background:linear-gradient(135deg,var(--accent),#5a8dff);border-color:transparent}
+.btn.secondary{background:rgba(255,255,255,.03)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:48px}
+.stat{padding:20px;border:1px solid var(--line);border-radius:16px;background:rgba(255,255,255,.03)}
+.stat strong{display:block;font-size:28px}
+.stat span{color:var(--muted);font-size:13px}
+section{padding:64px 0}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:16px;margin-bottom:24px}
+.section-head h2{font-size:32px;margin:0}
+.section-head p{max-width:620px;color:var(--muted);margin:0}
+.grid-2{display:grid;grid-template-columns:1.1fr .9fr;gap:20px}
+.card{
+  background:linear-gradient(180deg,rgba(255,255,255,.035),rgba(255,255,255,.02));
+  border:1px solid var(--line);border-radius:18px;padding:24px;box-shadow:var(--shadow);
+}
+.card h3{margin-top:0}
+.muted{color:var(--muted)}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{padding:8px 11px;border:1px solid var(--line);border-radius:999px;color:#d9def0;background:rgba(255,255,255,.025);font-size:13px}
+.timeline{display:grid;gap:16px}
+.item{padding:22px;border:1px solid var(--line);border-radius:16px;background:var(--panel2)}
+.item-top{display:flex;justify-content:space-between;gap:18px;align-items:flex-start}
+.item h3{margin:0 0 4px}
+.item .date{color:#aeb7d1;font-size:14px;white-space:nowrap}
+.item ul{margin:12px 0 0;padding-left:19px;color:var(--muted)}
+.project{
+  border:1px solid var(--line);border-radius:18px;padding:26px;
+  background:linear-gradient(145deg,rgba(124,108,255,.08),rgba(71,199,255,.04));
+}
+.project h3{margin-top:0}
+.kicker{font-size:12px;text-transform:uppercase;letter-spacing:1.7px;color:#99a7ff;font-weight:800}
+.edu{display:grid;gap:12px}
+.edu-row{display:flex;justify-content:space-between;gap:18px;padding:18px;border:1px solid var(--line);border-radius:14px;background:var(--panel2)}
+footer{padding:36px 0 60px;color:var(--muted);border-top:1px solid rgba(255,255,255,.06);margin-top:20px}
+.contact{display:flex;flex-wrap:wrap;gap:10px}
+.contact a{padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:rgba(255,255,255,.025)}
+@media (max-width:800px){
+  .nav-links{display:none}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .grid-2{grid-template-columns:1fr}
+  .item-top,.edu-row{flex-direction:column}
+  .item .date{white-space:normal}
+}
+</style>
+</head>
+<body>
+<nav>
+  <div class="container nav-inner">
+    <div class="brand">AMR AL FOUZ</div>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">AI Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="container">
+    <span class="badge">AI Trainer • Software Engineering • Digital Content</span>
+    <h1><span class="gradient">Amr Al Fouz</span><br/>AI Trainer & Evaluator</h1>
+    <p>Software Engineering and Digital Content professional focused on AI output evaluation, prompt refinement, quality assurance, technical troubleshooting, and clear human feedback.</p>
+    <div class="cta">
+      <a class="btn primary" href="mailto:alfouzamr@gmail.com">Contact Me</a>
+      <a class="btn secondary" href="https://www.linkedin.com/in/amralfouz/" target="_blank" rel="noreferrer">LinkedIn</a>
+    </div>
+    <div class="stats">
+      <div class="stat"><strong>5+ yrs</strong><span>Professional experience</span></div>
+      <div class="stat"><strong>AI</strong><span>Prompting & evaluation</span></div>
+      <div class="stat"><strong>QA</strong><span>Testing & error analysis</span></div>
+      <div class="stat"><strong>Remote</strong><span>Independent project work</span></div>
+    </div>
+  </div>
+</header>
+
+<main>
+<section id="about">
+  <div class="container">
+    <div class="section-head">
+      <div><div class="kicker">Profile</div><h2>About Me</h2></div>
+      <p>I combine software engineering, content quality, digital marketing, and AI-assisted workflows to evaluate outputs carefully and improve them against defined requirements.</p>
+    </div>
+    <div class="grid-2">
+      <div class="card">
+        <h3>Professional Focus</h3>
+        <p class="muted">Experienced in testing outputs against requirements, identifying inconsistencies, documenting findings, and refining work until quality standards are met. Hands-on with generative AI prompts and review workflows for written and visual content.</p>
+      </div>
+      <div class="card">
+        <h3>Best-fit Roles</h3>
+        <div class="chips">
+          <span class="chip">AI Trainer</span>
+          <span class="chip">AI Evaluator</span>
+          <span class="chip">Generalist Reviewer</span>
+          <span class="chip">Data Annotation</span>
+          <span class="chip">Content QA</span>
+          <span class="chip">Prompt Reviewer</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="container">
+    <div class="section-head">
+      <div><div class="kicker">Capabilities</div><h2>Core Skills</h2></div>
+      <p>Skills aligned with AI training, evaluation, quality assurance, and remote project work.</p>
+    </div>
+    <div class="chips">
+      <span class="chip">AI Output Evaluation</span>
+      <span class="chip">Data Annotation</span>
+      <span class="chip">Prompt Engineering</span>
+      <span class="chip">Task Design</span>
+      <span class="chip">Critical Thinking</span>
+      <span class="chip">Error Analysis</span>
+      <span class="chip">Written Rationales</span>
+      <span class="chip">Feedback Delivery</span>
+      <span class="chip">Guideline Adherence</span>
+      <span class="chip">Quality Assurance</span>
+      <span class="chip">Remote Collaboration</span>
+      <span class="chip">Documentation</span>
+      <span class="chip">Web Technologies</span>
+      <span class="chip">Digital Marketing</span>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="container">
+    <div class="section-head">
+      <div><div class="kicker">Selected Work</div><h2>AI & Prompting Projects</h2></div>
+      <p>Independent project work focused on prompt design, output quality, and responsible review.</p>
+    </div>
+    <div class="project">
+      <h3>AI-Assisted Content & Prompt Development</h3>
+      <p class="muted">2024 — Present · Remote Project Work · Sri Lanka</p>
+      <ul>
+        <li>Design and refine structured prompts for marketing copy, visual concepts, product content, and multilingual communication.</li>
+        <li>Evaluate AI outputs for instruction-following, relevance, clarity, grammar, visual consistency, completeness, and defined constraints.</li>
+        <li>Identify inaccurate, ambiguous, or low-quality outputs and provide precise corrections and concise written rationales.</li>
+        <li>Create reusable prompt templates and test alternative instructions to improve consistency and reduce ambiguity.</li>
+        <li>Apply human review for privacy, misleading claims, inappropriate content, bias, and responsible-use considerations.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="container">
+    <div class="section-head">
+      <div><div class="kicker">Career</div><h2>Professional Experience</h2></div>
+      <p>A background spanning content quality, digital marketing, web development, QA, debugging, and technical delivery.</p>
+    </div>
+    <div class="timeline">
+      <div class="item">
+        <div class="item-top">
+          <div><h3>Digital Marketing Specialist</h3><div class="muted">SMSlenz · Maruthamunai, Sri Lanka</div></div>
+          <div class="date">Jan 2024 — Dec 2024</div>
+        </div>
+        <ul>
+          <li>Reviewed written and visual content against briefs, platform requirements, and brand standards.</li>
+          <li>Analyzed campaign data and communicated actionable findings for correction.</li>
+          <li>Maintained project records, content calendars, and recurring deadlines.</li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <div class="item-top">
+          <div><h3>Digital Marketing Specialist</h3><div class="muted">The Olive Press · Doha, Qatar</div></div>
+          <div class="date">Jan 2023 — Jan 2024</div>
+        </div>
+        <ul>
+          <li>Created, reviewed, and quality-checked written, image, video, and campaign content.</li>
+          <li>Detected wording, sizing, formatting, and messaging issues before launch.</li>
+          <li>Used performance data and KPIs to make evidence-based recommendations.</li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <div class="item-top">
+          <div><h3>Web Developer</h3><div class="muted">Envicta PVT LTD · Colombo, Sri Lanka</div></div>
+          <div class="date">Mar 2020 — Dec 2022</div>
+        </div>
+        <ul>
+          <li>Tested websites, APIs, payment integrations, and responsive layouts against requirements.</li>
+          <li>Used structured debugging to identify root causes, document defects, implement fixes, and verify behavior.</li>
+          <li>Worked with WordPress, PHP, JavaScript, HTML, CSS, and SQL.</li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <div class="item-top">
+          <div><h3>Associate Software Engineer</h3><div class="muted">Titum PVT LTD · Colombo, Sri Lanka</div></div>
+          <div class="date">Jun 2019 — Feb 2020</div>
+        </div>
+        <ul>
+          <li>Tested eCommerce workflows, payment gateway integrations, and user interactions.</li>
+          <li>Reviewed dynamic UI components and documented technical corrections.</li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <div class="item-top">
+          <div><h3>Web Design & WordPress Developer</h3><div class="muted">Xiteb PVT LTD · Colombo, Sri Lanka</div></div>
+          <div class="date">Jan 2019 — Apr 2019</div>
+        </div>
+        <ul>
+          <li>Built and quality-checked responsive pages, navigation, animations, and contact forms.</li>
+          <li>Verified mobile responsiveness, cross-browser behavior, and SEO basics.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="container">
+    <div class="section-head">
+      <div><div class="kicker">Education</div><h2>Education & Training</h2></div>
+      <p>Software engineering and digital marketing education supporting technical and evaluation-focused work.</p>
+    </div>
+    <div class="edu">
+      <div class="edu-row"><div><strong>BEng Software Engineering (Top-up)</strong><div class="muted">London Metropolitan University</div></div><div class="muted">2025 — 2026</div></div>
+      <div class="edu-row"><div><strong>Higher National Diploma in Software Engineering</strong><div class="muted">E-Soft Metro Campus, Sri Lanka</div></div><div class="muted">2023 — 2025</div></div>
+      <div class="edu-row"><div><strong>Advanced Diploma in Digital Marketing</strong><div class="muted">SGC Campus, Sri Lanka</div></div><div></div></div>
+      <div class="edu-row"><div><strong>Diploma in Office Automation</strong></div><div></div></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="grid-2">
+      <div class="card">
+        <div class="kicker">Tools</div>
+        <h3>Technical Toolkit</h3>
+        <div class="chips">
+          <span class="chip">Generative AI Prompting</span>
+          <span class="chip">Output Comparison</span>
+          <span class="chip">Canva</span>
+          <span class="chip">CapCut</span>
+          <span class="chip">Adobe Photoshop</span>
+          <span class="chip">GitHub</span>
+          <span class="chip">VS Code</span>
+          <span class="chip">WordPress</span>
+          <span class="chip">Google Analytics</span>
+          <span class="chip">Meta Business Suite</span>
+          <span class="chip">HTML5</span>
+          <span class="chip">CSS3</span>
+          <span class="chip">JavaScript</span>
+          <span class="chip">PHP</span>
+          <span class="chip">SQL</span>
+          <span class="chip">Shopify</span>
+        </div>
+      </div>
+      <div class="card">
+        <div class="kicker">Languages</div>
+        <h3>Communication</h3>
+        <p><strong>English</strong> — Professional working proficiency</p>
+        <p><strong>Tamil</strong> — Fluent</p>
+        <p><strong>Sinhala</strong> — Fluent</p>
+        <p class="muted">Comfortable working independently in remote, project-based environments and learning detailed guidelines quickly.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <div class="section-head">
+      <div><div class="kicker">Contact</div><h2>Let’s Work Together</h2></div>
+      <p>Open to AI training, evaluation, data annotation, content QA, and remote generalist opportunities.</p>
+    </div>
+    <div class="contact">
+      <a href="mailto:alfouzamr@gmail.com">alfouzamr@gmail.com</a>
+      <a href="tel:+94752098005">+94 75 209 8005</a>
+      <a href="https://www.linkedin.com/in/amralfouz/" target="_blank" rel="noreferrer">linkedin.com/in/amralfouz/</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container">© 2026 Amr Al Fouz · AI Trainer Portfolio</div>
+</footer>
+</body>
+</html>
